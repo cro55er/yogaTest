@@ -1,6 +1,0 @@
-$(fuction() {
-
-	$('body').fadeOut();
-
-
-});
