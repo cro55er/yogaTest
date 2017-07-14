@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>YOGA test</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<section id="header">
-		<div class="header-menu">
-			<div class="inner">
+		<div class="inner">
+			<div class="header-menu">
 				<div class="menu-left">
 					<ul>
 						<li><a href="#about-us">About us</a></li>
@@ -33,28 +34,44 @@
 			<div class="inner">
 				<div class="trial-form">
 					<form action="">
-						<p>Trial Class</p>
-						<p><input type="text" placeholder="Enter your name" size="20"></p>
-						<p><input type="text" placeholder="Enter your phone" size="20"></p>
-						<p><select>
-							<option selected disabled>Chose your class</option>
-							<option type="First Class">First Class</option>
-							<option type="Second Class">Second Class</option>
+						<p class="form-title">Trial Class</p>
+						<p><input name="name" type="text" placeholder="Enter your name"></p>
+						<p><input name="phone" type="text" placeholder="Enter your phone"></p>
+						<p><select name="choseYourClass">
+							<option selected disabled hidden>Chose your class</option>
+							<option value="forHelth">Yoga for Health</option>
+							<option value="loseWeight">Yoga for Lose weight</option>
+							<option value="forChildren">Yoga for Children</option>
+							<option value="forElderly">Yoga for Elderly</option>
 						</select></p>
-						<input type="submit" value="Try it">
+						<input class="button" type="submit" value="Try it">
 					</form>
+					<script>
+						$( document ).ready(function() {
+							$('select').selectBox();
+							$('select').selectBox().change(function () {
+								$(this).css('color: #5b6ceb')
+							});
+						});
+					</script>
+				</div>
+				<div class="slogan">
+					<h1>Just Balance<br>your Mind & Body</h1>
+					<h2>Create the healthy living<br>for yourself</h2>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section id="our-classes">
 		<div class="inner">
-			<h2>YOGA FEATURE PROGRAMM</h2>
-			<h3>Our Classes</h3>
-			<div class="yogaClass"><img src="img/class-1.png" alt="Yoga for Health"></div>
-			<div class="yogaClass"><img src="img/class-2.png" alt="Yoga for Lose weight"></div>
-			<div class="yogaClass"><img src="img/class-3.png" alt="Yoga for Children"></div>
-			<div class="yogaClass"><img src="img/class-4.png" alt="Yoga for Elderly"></div>
+			<center>
+				<p class="title">YOGA FEATURE PROGRAM</p>
+				<p class="sub-title">Our Classes</p>
+			</center>
+			<div class="yogaClass forHelth"><img src="img/class-1.png" alt="Yoga for Health"></div>
+			<div class="yogaClass loseWeight"><img src="img/class-2.png" alt="Yoga for Lose weight"></div>
+			<div class="yogaClass forChildren"><img src="img/class-3.png" alt="Yoga for Children"></div>
+			<div class="yogaClass forElderly"><img src="img/class-4.png" alt="Yoga for Elderly"></div>
 		</div>
 	</section>
 	<section id="gallery">

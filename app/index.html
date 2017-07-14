@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>YOGA test</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<section id="header">
-		<div class="header-menu">
-			<div class="inner">
+		<div class="inner">
+			<div class="header-menu">
 				<div class="menu-left">
 					<ul>
 						<li><a href="#about-us">About us</a></li>
@@ -33,44 +34,107 @@
 			<div class="inner">
 				<div class="trial-form">
 					<form action="">
-						<p>Trial Class</p>
-						<p><input type="text" placeholder="Enter your name" size="20"></p>
-						<p><input type="text" placeholder="Enter your phone" size="20"></p>
-						<p><select>
-							<option selected disabled>Chose your class</option>
-							<option type="First Class">First Class</option>
-							<option type="Second Class">Second Class</option>
+						<p class="form-title">Trial Class</p>
+						<p><input name="name" type="text" placeholder="Enter your name"></p>
+						<p><input name="phone" type="text" placeholder="Enter your phone"></p>
+						<p><select name="choseYourClass">
+							<option selected disabled hidden>Chose your class</option>
+							<option value="forHelth">Yoga for Health</option>
+							<option value="loseWeight">Yoga for Lose weight</option>
+							<option value="forChildren">Yoga for Children</option>
+							<option value="forElderly">Yoga for Elderly</option>
 						</select></p>
-						<input type="submit" value="Try it">
+						<input class="button" type="submit" value="Try it">
 					</form>
+					<script>
+						$( document ).ready(function() {
+							$('select').selectBox({
+								keepInViewport: false
+							});
+							$('select').selectBox().change(function () {
+								$('.selectBox-label').css('color', '#5b6ceb')
+							});
+						});
+					</script>
+				</div>
+				<div class="slogan">
+					<h1>Just Balance<br>your Mind & Body</h1>
+					<h2>Create the healthy living<br>for yourself</h2>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section id="our-classes">
 		<div class="inner">
-			<h2>YOGA FEATURE PROGRAMM</h2>
-			<h3>Our Classes</h3>
-			<div class="yogaClass"><img src="img/class-1.png" alt="Yoga for Health"></div>
-			<div class="yogaClass"><img src="img/class-2.png" alt="Yoga for Lose weight"></div>
-			<div class="yogaClass"><img src="img/class-3.png" alt="Yoga for Children"></div>
-			<div class="yogaClass"><img src="img/class-4.png" alt="Yoga for Elderly"></div>
+			<center>
+				<p class="title">YOGA FEATURE PROGRAM</p>
+				<p class="sub-title">Our Classes</p>
+			</center>
+			<div class="class-wrapper-left">
+				<div class="yoga-class for-helth">
+					<img src="img/class-1.png" alt="Yoga for Health">
+					<div class="class-description">
+						<p>yoga for health</p>
+						Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+					</div>
+					<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+				</div>
+				<div class="yoga-class for-children">
+					<img src="img/class-3.png" alt="Yoga for Children">
+					<div class="class-description">
+						<p>Yoga for Children</p>
+						Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+					</div>
+					<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+					</div>
+			</div>
+			<div class="class-wrapper-right">
+				<div class="yoga-class lose-weight"><img src="img/class-2.png" alt="Yoga for Lose weight"></div>
+				<div class="yoga-class for-elderly"><img src="img/class-4.png" alt="Yoga for Elderly"></div>
+			</div>
 		</div>
 	</section>
 	<section id="gallery">
-		
+		<div class="gallery-img"><img src="img/gallery-1.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-2.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-3.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-4.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-5.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-6.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-7.png" alt=""></div>
+		<div class="gallery-img"><img src="img/gallery-8.png" alt=""></div>
 	</section>
 	<section id="about-us">
-		
+		<div class="inner">
+			<div class="description">
+				<div class="text">
+					<p class="title">about us</p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor it in lorei voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ispum loting sokui.
+				</div>
+			</div>
+			<div class="about-slider">
+				<div class="viewport">
+					<div class="prev-next-btns">
+						<div class="prev-btn"></div>
+						<div class="next-btn"></div>
+					</div>
+					<ul class="slidewrapper">
+						<li><img src="img/about-us.png" alt=""></li>
+						<li><img src="img/gallery-2.png" alt=""></li>
+						<li><img src="img/gallery-4.png" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</section>
 	<section id="features"></section>
 	<section id="prices"></section>
 	<section id="bloquotes"></section>
 	<section id="footer"></section>
 	<section id="copyright"></section>
-<footer>
-	<script src="js/libs.min.js"></script>
-	<script src="js/common.js"></script>
-</footer>
+	<footer>
+		<script src="js/libs.min.js"></script>
+		<script src="js/common.js"></script>
+	</footer>
 </body>
 </html>

@@ -20,7 +20,10 @@ gulp.task('sass', function(){
 });
 
 gulp.task('scripts', function(){
-	return gulp.src(['app/libs/jquery/dist/jquery.js'])
+	return gulp.src([
+		'app/libs/jquery/dist/jquery.js',
+		'app/libs/selectBox/jquery.selectBox.js'
+		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('app/js'));
