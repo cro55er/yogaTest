@@ -9,85 +9,239 @@
 </head>
 <body>
 	<section id="header">
-		<div class="inner">
-			<div class="header-menu">
-				<div class="menu-left">
-					<ul>
-						<li><a href="#about-us">About us</a></li>
-						<li><a href="#reservation">Reservation</a></li>
-						<li><a href="#gallery">Gallery</a></li>
-					</ul>
-				</div>
-				<div class="logo"><center><img src="/img/logo.svg" alt="yoga logo"><p>YOGA</p></center></div>
-				<div class="menu-right">
-					<ul>
-						<li><a href="#blog">Blog</a></li>
-						<li><a href="#elements">Elements</a></li>
-						<li><a href="#shop">Shop</a></li>
-					</ul>
-				</div>
+		<nav class="header-menu">
+			<div class="menu-left">
+				<ul>
+					<li><a href="#about-us">About us</a></li>
+					<li><a href="#reservation">Reservation</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+				</ul>
 			</div>
-		</div>
+			<div class="logo"><img src="/img/logo.svg" alt="yoga logo"><p>YOGA</p></div>
+			<div class="menu-right">
+				<ul>
+					<li><a href="#blog">Blog</a></li>
+					<li><a href="#elements">Elements</a></li>
+					<li><a href="#shop">Shop</a></li>
+				</ul>
+			</div>
+		</nav>
 	</section>
 	<section id="slider">
-		<div class="sld-wrap">
-			<div class="inner">
+		<div class="bg-slider"></div>
+		<div class="blue">
+			<div class="wrap">
 				<div class="trial-form">
-					<form action="">
-						<p class="form-title">Trial Class</p>
-						<p><input name="name" type="text" placeholder="Enter your name"></p>
-						<p><input name="phone" type="text" placeholder="Enter your phone"></p>
-						<p><select name="choseYourClass">
-							<option selected disabled hidden>Chose your class</option>
-							<option value="forHelth">Yoga for Health</option>
-							<option value="loseWeight">Yoga for Lose weight</option>
-							<option value="forChildren">Yoga for Children</option>
-							<option value="forElderly">Yoga for Elderly</option>
-						</select></p>
-						<input class="button" type="submit" value="Try it">
-					</form>
-					<script>
-						$( document ).ready(function() {
-							$('select').selectBox();
-							$('select').selectBox().change(function () {
-								$(this).css('color: #5b6ceb')
+					<div class="form-wrap">
+						<form action="">
+							<p class="form-title">Trial Class</p>
+							<p><input name="name" type="text" placeholder="Enter your name"></p>
+							<p><input name="phone" type="text" placeholder="Enter your phone"></p>
+							<p><select name="choseYourClass">
+								<option selected disabled hidden>Chose your class</option>
+								<option value="forHelth">Yoga for Health</option>
+								<option value="loseWeight">Yoga for Lose weight</option>
+								<option value="forChildren">Yoga for Children</option>
+								<option value="forElderly">Yoga for Elderly</option>
+							</select></p>
+							<input class="button" type="submit" value="Try it">
+						</form>
+						<script>
+							$( document ).ready(function() {
+								$('select').selectBox({
+									keepInViewport: false
+								});
+								$('select').selectBox().change(function () {
+									$('.selectBox-label').css('color', '#5b6ceb')
+								});
 							});
-						});
-					</script>
+						</script>
+					</div>
 				</div>
 				<div class="slogan">
-					<h1>Just Balance<br>your Mind & Body</h1>
-					<h2>Create the healthy living<br>for yourself</h2>
+					<p class="big">Just Balance</p>
+					<p class="big">your Mind & Body</p>
+					<p class="small">Create the healthy living</p>
+					<p class="small">for yourself</p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section id="our-classes">
-		<div class="inner">
-			<center>
-				<p class="title">YOGA FEATURE PROGRAM</p>
-				<p class="sub-title">Our Classes</p>
-			</center>
-			<div class="yogaClass forHelth"><img src="img/class-1.png" alt="Yoga for Health"></div>
-			<div class="yogaClass loseWeight"><img src="img/class-2.png" alt="Yoga for Lose weight"></div>
-			<div class="yogaClass forChildren"><img src="img/class-3.png" alt="Yoga for Children"></div>
-			<div class="yogaClass forElderly"><img src="img/class-4.png" alt="Yoga for Elderly"></div>
+		<div class="title-wrap">
+			<h1>YOGA FEATURE PROGRAM</h1>
+			<p class="sub-title">Our Classes</p>
+		</div>
+		<div class="class-wrap">
+			<ul class="yoga-class">
+				<li class="for-helth">
+					<img src="img/class-1.png" alt="Yoga for Health">
+					<h4>yoga for health</h4>
+					<div class="class-description">
+						<p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+						<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+					</div>
+				</li>
+				<li class="lose-weight">
+					<img src="img/class-2.png" alt="Yoga for Lose weight">
+					<h4>Yoga for Lose weight</h4>
+					<div class="class-description">
+						<p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+						<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+					</div>
+				</li>
+				<li class="for-children">
+					<img src="img/class-3.png" alt="Yoga for Children">
+					<h4>Yoga for Children</h4>
+					<div class="class-description">
+						Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+						<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+					</div>
+				</li>
+				<li class="for-elderly">
+					<img src="img/class-4.png" alt="Yoga for Elderly">
+					<h4>Yoga for Elderly</h4>
+					<div class="class-description">
+						<p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+						<p><a href="/Ashtanga-Hatha">Ashtanga - Hatha</a></p>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</section>
 	<section id="gallery">
-		
+		<ul>
+			<li class="gallery-img"><img src="img/gallery-1.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-2.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-3.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-4.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-5.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-6.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-7.png" alt=""></li>
+			<li class="gallery-img"><img src="img/gallery-8.png" alt=""></li>
+		</ul>
 	</section>
 	<section id="about-us">
-		
+		<div class="wrap">
+			<div class="description">
+				<div class="text">
+					<h3>about us</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor it in lorei voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ispum loting sokui.</p>
+				</div>
+			</div>
+			<div class="about-slider">
+				<div class="viewport">
+					<div class="prev-next-btns">
+						<div class="prev-btn"></div>
+						<div class="next-btn"></div>
+					</div>
+					<ul class="slide-wrap">
+						<li><img src="img/about-us.png" alt=""></li>
+						<li><img src="img/gallery-2.png" alt=""></li>
+						<li><img src="img/gallery-4.png" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</section>
-	<section id="features"></section>
-	<section id="prices"></section>
-	<section id="bloquotes"></section>
-	<section id="footer"></section>
-	<section id="copyright"></section>
-<footer>
-	<script src="js/libs.min.js"></script>
-	<script src="js/common.js"></script>
-</footer>
-</body>
-</html>
+	<section id="features">
+		<div class="bg-features"></div>
+		<div class="blue">
+			<div class="wrap">
+				<ul class="feature-list">
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-1.svg" width="32" height="auto" alt="Health"></div>
+							<h4>IMPROVED OVERALL HEALTH</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-2.svg" width="42" height="auto" alt="Concentration"></div>
+							<h4>INCREASED CONCENTRATION</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-3.svg" width="48" height="auto" alt="Balance"></div>
+							<h4>BLANCE YOUR MIND</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-4.svg" width="32" height="auto" alt="Sleep"></div>
+							<h4>SLEEP BETTER</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-5.svg" width="auto" height="40" alt="Weight"></div>
+							<h4>WEIGHT LOSS</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-6.svg" width="auto" height="48" alt="Bones"></div>
+							<h4>STRENGTHENS YOUR BONES</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-7.svg" width="52" height="auto" alt="Flexibility"></div>
+							<h4>INCREASED FLEXIBILITY</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+					<li>
+						<center>
+							<div class="icon"><img src="img/features-icon-8.svg" width="36" height="auto" alt="Blood"></div>
+							<h4>LOWER BLOOD PRESSURE</h4>
+						</center>
+						<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+		<section id="prices">
+			<div class="wrap">
+				<ul class="price-list">
+					<li>
+						<div class="price-1">
+							<div class="head-price">
+								<p class="price"><span>$</span>49<span>/month</span></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="price-2">
+							<div class="head-price">
+								<p class="price"><span>$</span>69<span>/month</span></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="price-3">
+							<div class="head-price">
+								<p class="price"><span>$</span>99<span>/month</span></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="bloquotes"></section>
+		<section id="footer"></section>
+		<section id="copyright"></section>
+		<footer>
+			<script src="js/libs.min.js"></script>
+			<script src="js/common.js"></script>
+		</footer>
+	</body>
+	</html>
