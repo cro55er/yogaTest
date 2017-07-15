@@ -2,12 +2,22 @@
 //----------------------------------------------------------//
 //-------------------------ELEMENTS-------------------------//
 //----------------------------------------------------------//
+
+//-------------------------COLORS---------------------------//
 $mainColor: #5b6ceb
 $darkColor: #5363db
 $color3: #777777
-$main-font: 'Open Sans', sans-serif
+
+//--------------------------FONTS----------------------------//
+$mainFont: 'Open Sans'
 $font2: 'Champagne+Limousines'
 $font3: 'Freestyle Script'
+
+//----------------------DEVICE SCREEN------------------------//
+$small: 320px
+$large: 1024px
+
+
 
 *
 	margin: 0
@@ -22,7 +32,7 @@ body
 	width: 100%
 	height: 100%
 	background-color: #FFF
-	font-family: $main-font
+	font-family: $mainFont
 	font-size: 16px
 
 h1
@@ -43,7 +53,15 @@ input
 	color: $mainColor
 
 img
+	display: flex
+	max-width: 100%
 	vertical-align: bottom
+
+ul
+	list-style: none
+
+a
+	text-decoration: none
 
 .title
 		color: $mainColor
@@ -52,37 +70,37 @@ img
 
 .inner
 	width: 1160px
-	height: 100%
 	margin: auto
+
 
 //----------------------------------------------------------//
 //--------------------------HEADER--------------------------//
 //----------------------------------------------------------//
-#header 
+.header-menu
 	position: fixed
 	width: 100%
 	height: 100px
 	background-color: #FFF
 	z-index: 999
 	box-shadow: 0 3px 7px rgba( 0, 0, 0, 0.15)
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	flex-wrap: nowrap
 
-.header-menu ul li
-	display: inline-block
-
-.menu-left
-	margin-left: 140px
-
-.menu-left, .logo, .menu-right
-	float: left
-
-.menu-left, .menu-right
-	height: 100%
-	padding-top: 43px
+.menu-left,
+.menu-right
+	min-width: 270px
 	a
-		text-decoration: none
 		font-weight: 600
-		font-size: 0.87em
 		color: #555555
+
+	li
+		display: inline-block
+		min-width: 30px
+	li:not(:first-child)
+		margin-left: 30px
 	li::after
 		display: block
 		content: ""
@@ -96,22 +114,15 @@ img
 	li:hover::after
 		width: 30px
 
-.header-menu li
-	min-width: 30px
-
-.header-menu li:not(:first-child)
-	margin-left: 30px
-
 .logo
-	width: 370px
+	margin: 0 150px
 	font-family: $font2
 	font-size: 1.5em
 	font-weight: bold
 	letter-spacing: 5px
-	padding-top: 15px
 	color: $mainColor
 	img
-		width: 67px
+		width: 70px
 
 
 
@@ -130,15 +141,20 @@ img
 	width: 100%
 	height: 100%
 	background-color: rgba(91, 108, 235, 0.8)
-
+	display: flex
+	flex-direction: row wrap
+	justify-content: center
+	align-items: center
 .trial-form
-	margin-top: 100px
-	margin-left: 240px
-	float: left
+	order: 1
+.form-wrap
+	height: 390px
+	width: 300px
 	background-color: #FFF
 	padding: 40px 40px 35px 30px
 	border-radius: 20px
 	box-shadow: 8px 8px 10px rgba( 0, 0, 0, 0.15)
+
 	form
 		height: 315px
 		width: 225px
@@ -175,14 +191,15 @@ img
 
 		
 .slogan
-	float: left
-	margin-top: 175px
+	min-width: 470px
+	order: 2
 	margin-left: 90px
 	color: #FFF
 	h1
 		text-transform: uppercase
 	h2
 		font-family: $font3
+		font-weight: normal
 
 
 //----------------------------------------------------------//
@@ -226,9 +243,13 @@ img
 //-------------------------GALLERY-------------------------//
 //----------------------------------------------------------//
 #gallery
-	width: calc(100% - 6px)
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: flex-start
+	align-items: stretch
+	flex-wrap: wrap
 .gallery-img
-	float: left
 	width: 25%
 
 //----------------------------------------------------------//
@@ -245,38 +266,38 @@ img
 	width: 50%
 	padding-left: 15px
 	float: right
-	.viewport
-		width: 570px
-		height: 300px
-		margin: 125px 0px
-		overflow: hidden
-		border-radius: 8px
-		box-shadow: 8px 8px 10px rgba( 0, 0, 0, 0.15)
-		.prev-next-btns
-			width: 100%
-			display: table
-			position: relative
-			overflow: hidden
-			-webkit-user-select: none
-			-moz-user-select: none
-			-ms-user-select: none
-			-o-user-select: none
-			user-select: none
-		.prev-btn, .next-btn
-			position: absolute
-			width: 50px
-			height: 50px
-			background-color: #fff
-			border-radius: 50%
-			margin-top: 125px
-			z-index: 999
-		.prev-btn
-			left: -25px
-		.next-btn
-			right: -25px
+.viewport
+	width: 570px
+	height: 300px
+	margin: 125px 0px
+	overflow: hidden
+	border-radius: 8px
+	box-shadow: 8px 8px 10px rgba( 0, 0, 0, 0.15)
+.prev-next-btns
+	width: 100%
+	display: table
+	position: relative
+	overflow: hidden
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	-o-user-select: none
+	user-select: none
+.prev-btn, .next-btn
+	position: absolute
+	width: 50px
+	height: 50px
+	background-color: #fff
+	border-radius: 50%
+	margin-top: 125px
+	z-index: 999
+.prev-btn
+	left: -25px
+.next-btn
+	right: -25px
 
-	ul.slidewrapper
-		margin-top: -100px
+ul.slidewrapper
+	margin-top: -100px
 
 
 
@@ -285,19 +306,19 @@ img
 //----------------------------------------------------------//
 
 .selectBox-label
-		color: #777
-		display: block
-		width: 220px
-		height: 50px
-		margin-top: 17px
-		padding-left: 10px
-		line-height: 50px
-		background-color: #f2f2f2
-		border-radius: 8px;
-		-webkit-box-sizing: content-box
-		-moz-box-sizing: content-box
-		-ms-box-sizing: content-box
-		box-sizing: content-box
+	color: #777
+	display: block
+	width: 220px
+	height: 50px
+	margin-top: 17px
+	padding-left: 10px
+	line-height: 50px
+	background-color: #f2f2f2
+	border-radius: 8px;
+	-webkit-box-sizing: content-box
+	-moz-box-sizing: content-box
+	-ms-box-sizing: content-box
+	box-sizing: content-box
 
 .selectBox-dropdown
 	position: relative
