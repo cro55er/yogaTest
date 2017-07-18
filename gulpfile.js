@@ -22,7 +22,8 @@ gulp.task('sass', function(){
 gulp.task('scripts', function(){
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.js',
-		'app/libs/selectBox/jquery.selectBox.js'
+		'app/libs/selectBox/jquery.selectBox.js',
+		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
@@ -39,9 +40,9 @@ gulp.task('css-libs', ['sass'], function(){
 gulp.task('browser-sync', function(){
 	browserSync({
 		server: {
-		  baseDir: 'app'
+		  baseDir: 'app',
 		},
-		notify: false
+    notify: false,
 	});
 });
 
