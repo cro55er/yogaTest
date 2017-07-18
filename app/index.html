@@ -29,31 +29,27 @@
 		</nav>
 	</section>
 	<section id="slider">
-		<div class="bg-slider"></div>
-		<div class="blue">
+		<div class="blue2">
 			<div class="wrap">
 				<div class="trial-form">
 					<div class="form-wrap">
-						<form action="">
+						<form id="trialClass" action="">
 							<p class="form-title">Trial Class</p>
-							<p><input name="name" type="text" placeholder="Enter your name"></p>
-							<p><input name="phone" type="text" placeholder="Enter your phone"></p>
-							<p><select name="choseYourClass">
-								<option selected disabled hidden>Chose your class</option>
-								<option value="forHelth">Yoga for Health</option>
-								<option value="loseWeight">Yoga for Lose weight</option>
-								<option value="forChildren">Yoga for Children</option>
-								<option value="forElderly">Yoga for Elderly</option>
+							<p><input id="name" name="name" class="empty" type="text" placeholder="Enter your name"></p>
+							<p><input id="phone" name="phone" class="empty" type="text" placeholder="Enter your phone"></p>							
+							<p><select id="yogaClass" name="class" >
+								<option class="empty" selected disabled hidden value="0">Chose your class</option>
+								<option value="1">Yoga for Health</option>
+								<option value="2">Yoga for Lose weight</option>
+								<option value="3">Yoga for Children</option>
+								<option value="4">Yoga for Elderly</option>
 							</select></p>
 							<input class="button" type="submit" value="Try it">
 						</form>
 						<script>
 							$( document ).ready(function() {
-								$('select').selectBox({
+								$('#yogaClass').selectBox({
 									keepInViewport: false
-								});
-								$('select').selectBox().change(function () {
-									$('.selectBox-label').css('color', '#5b6ceb')
 								});
 							});
 						</script>
@@ -188,8 +184,7 @@
 				</div>
 			</section>
 			<section id="features">
-				<div class="bg-features"></div>
-				<div class="blue">
+				<div class="blue2">
 					<div class="wrap">
 						<ul class="feature-list">
 							<li>
@@ -209,7 +204,7 @@
 							<li>
 								<center>
 									<div class="icon"><img src="img/features-icon-3.svg" width="48" height="auto" alt="Balance"></div>
-									<h4>BLANCE YOUR MIND</h4>
+									<h4>BALANCE YOUR MIND</h4>
 									<p>Enim ad minim veniam, quis nostrud exercitation toui ullamcomi laboris nisi ut aliquip ex ea com.</p>
 								</center>
 							</li>
@@ -256,37 +251,31 @@
 				<div class="wrap">
 					<ul class="price-list">
 						<li>
-							<div class="price-1">
-								<div class="head-price">
-									<p class="price"><span>$</span>49<span>/month</span></p>
-								</div>
-								<p>ENTRY DATE: MON – FRI</p>
-								<p>ENTRY TIME: 8A.M – 8P.M</p>
-								<p>NUTRITION ADVICER: NO</p>
-								<a class="buy-btn" href="/buy-now-1">Buy now</a>
+							<div class="head-price">
+								<p class="price"><span>$</span>49<span>/month</span></p>
 							</div>
+							<p>ENTRY DATE: MON – FRI</p>
+							<p>ENTRY TIME: 8A.M – 8P.M</p>
+							<p>NUTRITION ADVICER: NO</p>
+							<a class="buy-btn" href="/buy-now-1">Buy now</a>
 						</li>
 						<li>
-							<div class="price-2">
-								<div class="head-price">
-									<p class="price"><span>$</span>69<span>/month</span></p>
-								</div>
-								<p>ENTRY DATE: MON – FRI</p>
-								<p>ENTRY TIME: 8A.M – 8P.M</p>
-								<p>NUTRITION ADVICER: YES</p>
-								<a class="buy-btn" href="/buy-now-2">Buy now</a>
+							<div class="head-price">
+								<p class="price"><span>$</span>69<span>/month</span></p>
 							</div>
+							<p>ENTRY DATE: MON – FRI</p>
+							<p>ENTRY TIME: 8A.M – 8P.M</p>
+							<p>NUTRITION ADVICER: YES</p>
+							<a class="buy-btn" href="/buy-now-2">Buy now</a>
 						</li>
 						<li>
-							<div class="price-3">
-								<div class="head-price">
-									<p class="price"><span>$</span>99<span>/month</span></p>
-								</div>
-								<p>ENTRY DATE: MON – SUN</p>
-								<p>ENTRY TIME: 8A.M – 8P.M</p>
-								<p>NUTRITION ADVICER: YES</p>
-								<a class="buy-btn" href="/buy-now-3">Buy now</a>
+							<div class="head-price">
+								<p class="price"><span>$</span>99<span>/month</span></p>
 							</div>
+							<p>ENTRY DATE: MON – SUN</p>
+							<p>ENTRY TIME: 8A.M – 8P.M</p>
+							<p>NUTRITION ADVICER: YES</p>
+							<a class="buy-btn" href="/buy-now-3">Buy now</a>
 						</li>
 					</ul>
 				</div>

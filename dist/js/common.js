@@ -5,7 +5,7 @@
 			var $sections = $('section');
 
 			$sections.each(function(i,el){
-				var top  = $(el).offset().top-($(window).outerHeight()/2);
+				var top	= $(el).offset().top-($(window).outerHeight()/2);
 				var bottom = top + $(el).height();
 				var scroll = $(window).scrollTop();
 				var id = $(el).attr('id');
@@ -40,13 +40,96 @@
 
 		$('.bg-features').heightResize();
  
- 	// ---------------------------------------------------------------------------- POP UP
+	// ---------------------------------------------------------------------------- FORM VALID
+
+	$( 'input#name, input#phone, select#yogaClass' ).unbind().blur( function(){
+
+		var id = $(this).attr( 'id' );
+		var	val = $(this).val();
 
 
-  $('.image-link').magnificPopup({type:'image'});
+		switch(id) {
+
+		case 'name' : 
+				var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+				if (val.length > 2 && val != '' && rv_name.test(val)) {
+
+					$(this).removeClass('empty invalid').addClass( 'valid' );
+
+				} else {
+
+					$(this).removeClass('valid').addClass( 'invalid' );
+
+					} 
+
+				break;
+
+		case 'phone' :
+
+				var rv_phone = /^((8|\+1)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+
+				if (val != '' && rv_phone.test(val)){
+
+					$(this).removeClass('empty invalid').addClass( 'valid' );
+
+				} else {
+
+					$(this).removeClass('valid').addClass( 'invalid' );
+
+					} 
+
+				break;
+
+		case 'yogaClass' : 
+
+				if ( val > 0 ) {
+
+					$('selectBox-label').removeClass('empty');
+
+					$('.selectBox-label').removeClass('invalid').addClass( 'valid' );
+
+				} else {
+
+					$('.selectBox-label').removeClass('valid').addClass( 'invalid' );
+
+					} 
+
+				break;
+
+		} // END SWITCH()
+	}); // END BLUR()
+
+	$('form#trialClass').submit(function(e){
+
+		e.preventDefault();
+
+		if ($('.valid').length == 3) {
+
+			alert ('Success!....');
+
+		} else {
 
 
+			$('.empty').addClass('invalid');
+		
+		}
+
+	});
+
+	$('#yogaClass').selectBox().change(function () {
+			$('.selectBox-label').addClass('valid');
+	});
+	// ---------------------------------------------------------------------------- POP UP
+
+
+	$('.image-link').magnificPopup({type:'image'});
+
+
+	
 	// ---------------------------------------------------------------------------- SLIDER
+
+
 	var slideNow = 1;
 	var slideCount = $('#slidewrapper').children().length;
 	var slideInterval = 5000;

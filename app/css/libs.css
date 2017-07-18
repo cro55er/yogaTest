@@ -379,7 +379,8 @@ img.mfp-img {
     padding-right: 6px; } }
 
 .selectBox-label {
-  color: #777;
+  color: #555555;
+  font-family: 'Open Sans', sans-serif;
   display: block;
   width: 220px;
   height: 50px;
@@ -438,7 +439,7 @@ img.mfp-img {
 .selectBox-options,
 .selectBox-options LI,
 .selectBox-options LI A {
-  color: #5b6ceb;
+  color: #555555;
   list-style: none;
   display: block;
   cursor: default;
