@@ -1,11 +1,24 @@
-	$( document ).ready(function() {
+	$(document).ready(function() {
 		
+		$('.menu-item').click( function() { 
+
+			var scroll_el = $(this).attr('href'); 
+			
+			if ($(scroll_el).length != 0) { 
+			
+			$('html, body').animate({ scrollTop: ( $(scroll_el).offset().top ) - 150 }, 500);
+			
+			}
+			
+			return false; // выключаем стандартное действие
+		});
+
 		$(window).scroll(function(e){
 
 			var $sections = $('section');
 
 			$sections.each(function(i,el){
-				var top	= $(el).offset().top-($(window).outerHeight()/2);
+				var top	= $(el).offset().top-($(window).height()/2);
 				var bottom = top + $(el).height();
 				var scroll = $(window).scrollTop();
 				var id = $(el).attr('id');
@@ -16,14 +29,6 @@
 
 				}
 			})
-		});
-
-		$('a[href^="#"]').click(function(){
-			var el = $(this).attr('href');
-
-			$('body').animate({scrollTop: ($(el).offset().top)-150}, 1200);
-
-			return false;
 		});
 
 		(function( $ ) {
@@ -120,15 +125,82 @@
 	$('#yogaClass').selectBox().change(function () {
 			$('.selectBox-label').addClass('valid');
 	});
+	
+	$('#basic .buy-btn').hover(function() {
+				$('#basic .title-price').css({'color' : '#5b6ceb'});
+			}, function() {
+				$('#basic .title-price').css({'color' : '#555555'});
+			}
+		);
+	$('#pro .buy-btn').hover(function() {
+				$('#pro .title-price').css({'color' : '#5b6ceb'});
+			}, function() {
+				$('#pro .title-price').css({'color' : '#555555'});
+			}
+		);
+	$('#premium .buy-btn').hover(function() {
+				$('#premium .title-price').css({'color' : '#5b6ceb'});
+			}, function() {
+				$('#premium .title-price').css({'color' : '#555555'});
+			}
+		);
 	// ---------------------------------------------------------------------------- POP UP
 
 
-	$('.image-link').magnificPopup({type:'image'});
+	$('.image-link').magnificPopup({type:'image'}); //gallery pop-up
+
+	$('.popup-with-form').magnificPopup({ //form-pop-up
+	type: 'inline',
+	preloader: true,
+	focus: '#name',
+	callbacks: {
+		beforeOpen: function() {
+			if($(window).width() < 700) {
+				this.st.focus = false;
+			} else {
+				this.st.focus = '#name';
+			}
+		}
+	}
+});
 
 
-	
-	// ---------------------------------------------------------------------------- SLIDER
+	// ---------------------------------------------------------------------------- TOGGLE MENU
 
+$(".toggle-menu").click(function() {
+	if ($("#mob-menu").is(":visible")){
+		$("#mob-menu").fadeOut(700);
+	} else {
+		$("#mob-menu").fadeIn(700);
+}
+});
+
+$(".toggle-menu, .menu-item").click(function() {
+	$(".sandwich").toggleClass("active");
+});
+
+$(".menu-item").click(function() {
+	$("#mob-menu").fadeOut(700);
+});
+
+// ---------------------------------------------------------------------------- QUOTES SLIDER
+
+	$('.testimonials-wrapper').flexslider({
+
+			selector: "#quotes-wrap > li",
+			animation: "fade",
+    	animationLoop: true,
+			controlNav: true,
+			slideshow: true,
+			smoothHeight: true,
+			start: function(){
+					$('#quotes-wrap').children('li').css({
+						'background-color' : 'white'
+					});
+			}
+	});
+
+// ---------------------------------------------------------------------------- SLIDER
 
 	var slideNow = 1;
 	var slideCount = $('#slidewrapper').children().length;
@@ -208,4 +280,8 @@
 	}
 // -----------------------------------------------------------------------------END_SLIDER
 
+
+
+
 });
+
